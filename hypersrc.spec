@@ -21,7 +21,7 @@ a source code file.
 
 %description -l pl
 hypersrc to program z graficznym interfejsem u¿ytkownika w GTK+ do
-przegl±dania kodu ¼ród³owego. Daje widget z list± zaieraj±c±
+przegl±dania kodu ¼ród³owego. Daje widget z list± zawieraj±c±
 posortowane tagi ze ¼róde³. Programista mo¿e klikn±æ na tag, aby
 przej¶æ do otagowanej linii w pliku z kodem ¼ród³owym.
 
