@@ -46,13 +46,11 @@ install -d $RPM_BUILD_ROOT%{_libdir}/hypersrc
 install ctags.pl $RPM_BUILD_ROOT%{_libdir}/hypersrc
 install Hypersrc.pl.new $RPM_BUILD_ROOT%{_bindir}/Hypersrc
 
-gzip -9nf LICENSE.txt README.txt
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc LICENSE.txt.gz README.txt.gz
+%doc LICENSE.txt README.txt
 %attr(755,root,root) %{_bindir}/*
 %{_libdir}/hypersrc
