@@ -1,12 +1,12 @@
 Name:		hypersrc
-Version:	2.1.6
+Version:	4.4.15
 Release:	1
 Summary:	hypersrc is a GUI program for browsing source code 
 License:	GPL
 Group:		Development
 Group(de):	Entwicklung
 Group(pl):	Programowanie
-Source0:	ftp://ftp.jimbrooks.org/hypersrc/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.jimbrooks.org/hypersrc/latest/%{name}-%{version}.tar.gz
 Patch0:		installdir.patch
 URL:		http://www.jimbrooks.org/web/hypersrc/hypersrc.html 
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
