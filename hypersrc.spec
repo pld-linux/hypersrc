@@ -7,7 +7,7 @@ License:	GPL
 Group:		X11/Development/Tools
 Source0:	ftp://ftp.jimbrooks.org/hypersrc/latest/%{name}-%{version}.tar.gz
 Patch0:		installdir.patch
-URL:		http://www.jimbrooks.org/web/hypersrc/hypersrc.html 
+URL:		http://www.jimbrooks.org/web/hypersrc/hypersrc.html
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Requires:	ctags >= 4.0.2
 BuildRequires:	gtk+-devel >= 1.2.3
@@ -43,7 +43,7 @@ sed -e "s|/var/tmp/hypersrc-root%{_bindir}/hypersrc|%{_libdir}/hypersrc/hypersrc
     s|/var/tmp/hypersrc-root%{_bindir}/ctags|%{_bindir}/ctags|" Hypersrc.pl >> Hypersrc.pl.new
 
 install -d $RPM_BUILD_ROOT%{_libdir}/hypersrc
-install ctags.pl $RPM_BUILD_ROOT%{_libdir}/hypersrc 
+install ctags.pl $RPM_BUILD_ROOT%{_libdir}/hypersrc
 install Hypersrc.pl.new $RPM_BUILD_ROOT%{_bindir}/Hypersrc
 
 gzip -9nf LICENSE.txt README.txt
