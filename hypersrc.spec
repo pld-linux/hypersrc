@@ -5,9 +5,6 @@ Version:	4.4.15
 Release:	1
 License:	GPL
 Group:		X11/Development/Tools
-Group(de):	X11/Entwicklung/Werkzeuge
-Group(fr):	X11/Development/Outils
-Group(pl):	X11/Programowanie/Narzêdzia
 Source0:	ftp://ftp.jimbrooks.org/hypersrc/latest/%{name}-%{version}.tar.gz
 Patch0:		installdir.patch
 URL:		http://www.jimbrooks.org/web/hypersrc/hypersrc.html 
