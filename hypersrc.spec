@@ -9,10 +9,9 @@ Source0:	ftp://ftp.jimbrooks.org/hypersrc/latest/%{name}-%{version}.tar.gz
 # Source0-md5:	8f4fbc8e5228dc34f29b652b82600ea6
 Patch0:		installdir.patch
 URL:		http://www.jimbrooks.org/web/hypersrc/hypersrc.html
-Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Requires:	ctags >= 4.0.2
 BuildRequires:	gtk+-devel >= 1.2.3
-
+Requires:	ctags >= 4.0.2
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 hypersrc is a GUI program for browsing source code, built with GTK+.
@@ -32,10 +31,13 @@ przej¶æ do otagowanej linii w pliku z kodem ¼ród³owym.
 
 %build
 %{__make}
+# TODO: optflags
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} INSTALL_DIR=$RPM_BUILD_ROOT%{_bindir} install
+
+%{__make} install \
+	INSTALL_DIR=$RPM_BUILD_ROOT%{_bindir}
 
 sed -e "s|/var/tmp/hypersrc-root%{_bindir}/hypersrc|%{_libdir}/hypersrc/hypersrc|; \
     s|/var/tmp/hypersrc-root%{_bindir}/ctags.pl|%{_libdir}/hypersrc/ctags.pl|; \
@@ -50,6 +52,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc LICENSE.txt README.txt
+%doc README.txt
 %attr(755,root,root) %{_bindir}/*
 %{_libdir}/hypersrc
