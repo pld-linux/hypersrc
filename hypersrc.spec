@@ -12,8 +12,6 @@ Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Requires:	ctags >= 4.0.2
 BuildRequires:	gtk+-devel >= 1.2.3
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description
 hypersrc is a GUI program for browsing source code, built with GTK+.
