@@ -6,6 +6,7 @@ Release:	0.1
 License:	GPL
 Group:		X11/Development/Tools
 Source0:	ftp://ftp.jimbrooks.org/hypersrc/latest/%{name}-%{version}.tar.gz
+# Source0-md5:	8f4fbc8e5228dc34f29b652b82600ea6
 Patch0:		installdir.patch
 URL:		http://www.jimbrooks.org/web/hypersrc/hypersrc.html
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
