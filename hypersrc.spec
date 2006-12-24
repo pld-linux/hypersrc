@@ -1,17 +1,16 @@
 Summary:	hypersrc is a GUI program for browsing source code
 Summary(pl):	Program GUI do przegl±dania kodu ¼ród³owego
 Name:		hypersrc
-Version:	4.4.15
+Version:	5.4.20
 Release:	0.1
-License:	GPL
+License:	GPL v2
 Group:		X11/Development/Tools
 Source0:	ftp://ftp.jimbrooks.org/hypersrc/latest/%{name}-%{version}.tar.gz
-# Source0-md5:	8f4fbc8e5228dc34f29b652b82600ea6
-#Patch0:		installdir.patch
-URL:		http://www.jimbrooks.org/web/hypersrc/hypersrc.html
-BuildRequires:	bison
-BuildRequires:	flex
+# Source0-md5:	5ef719a9bda943e69f92172bb8013627
+URL:		http://www.jimbrooks.org/web/hypersrc/hypersrc.php
+BuildRequires:	gnome-libs-devel
 BuildRequires:	gtk+-devel >= 1.2.3
+BuildRequires:	libart_lgpl-devel
 Requires:	ctags >= 4.0.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -29,10 +28,10 @@ przej¶æ do otagowanej linii w pliku z kodem ¼ród³owym.
 
 %prep
 %setup -q -n %{name}
-#%patch0 -p1
 
 %build
-%{__make}
+%{__make} \
+	CC="%{__cc}"
 # TODO: optflags
 
 %install
@@ -41,13 +40,10 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	INSTALL_DIR=$RPM_BUILD_ROOT%{_bindir}
 
-sed -e "s|/var/tmp/hypersrc-root%{_bindir}/hypersrc|%{_libdir}/hypersrc/hypersrc|; \
-    s|/var/tmp/hypersrc-root%{_bindir}/ctags.pl|%{_libdir}/hypersrc/ctags.pl|; \
-    s|/var/tmp/hypersrc-root%{_bindir}/ctags|%{_bindir}/ctags|" Hypersrc.pl >> Hypersrc.pl.new
-
-install -d $RPM_BUILD_ROOT%{_libdir}/hypersrc
+install -d $RPM_BUILD_ROOT{%{_libdir}/hypersrc,%{_mandir}/man1}
 install ctags.pl $RPM_BUILD_ROOT%{_libdir}/hypersrc
-install Hypersrc.pl.new $RPM_BUILD_ROOT%{_bindir}/Hypersrc
+install Hypersrc.pl $RPM_BUILD_ROOT%{_bindir}/Hypersrc
+install hypersrc.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -57,3 +53,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc README.txt
 %attr(755,root,root) %{_bindir}/*
 %{_libdir}/hypersrc
+%{_mandir}/man1/hypersrc.1.*
