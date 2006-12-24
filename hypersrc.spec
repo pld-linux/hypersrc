@@ -7,8 +7,10 @@ License:	GPL
 Group:		X11/Development/Tools
 Source0:	ftp://ftp.jimbrooks.org/hypersrc/latest/%{name}-%{version}.tar.gz
 # Source0-md5:	8f4fbc8e5228dc34f29b652b82600ea6
-Patch0:		installdir.patch
+#Patch0:		installdir.patch
 URL:		http://www.jimbrooks.org/web/hypersrc/hypersrc.html
+BuildRequires:	bison
+BuildRequires:	flex
 BuildRequires:	gtk+-devel >= 1.2.3
 Requires:	ctags >= 4.0.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -27,7 +29,7 @@ przej¶æ do otagowanej linii w pliku z kodem ¼ród³owym.
 
 %prep
 %setup -q -n %{name}
-%patch0 -p1
+#%patch0 -p1
 
 %build
 %{__make}
