@@ -1,5 +1,5 @@
 Summary:	hypersrc is a GUI program for browsing source code
-Summary(pl):	Program GUI do przegl±dania kodu ¼ród³owego
+Summary(pl.UTF-8):   Program GUI do przeglÄ…dania kodu ÅºrÃ³dÅ‚owego
 Name:		hypersrc
 Version:	5.4.20
 Release:	0.1
@@ -20,11 +20,11 @@ It provides a list widget containing sorted source code tags. A
 programmer can click a tag to hyperlink to a particular tagged line in
 a source code file.
 
-%description -l pl
-hypersrc to program z graficznym interfejsem u¿ytkownika w GTK+ do
-przegl±dania kodu ¼ród³owego. Daje widget z list± zawieraj±c±
-posortowane tagi ze ¼róde³. Programista mo¿e klikn±æ na tag, aby
-przej¶æ do otagowanej linii w pliku z kodem ¼ród³owym.
+%description -l pl.UTF-8
+hypersrc to program z graficznym interfejsem uÅ¼ytkownika w GTK+ do
+przeglÄ…dania kodu ÅºrÃ³dÅ‚owego. Daje widget z listÄ… zawierajÄ…cÄ…
+posortowane tagi ze ÅºrÃ³deÅ‚. Programista moÅ¼e kliknÄ…Ä‡ na tag, aby
+przejÅ›Ä‡ do otagowanej linii w pliku z kodem ÅºrÃ³dÅ‚owym.
 
 %prep
 %setup -q -n %{name}
