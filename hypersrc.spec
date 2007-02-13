@@ -1,5 +1,5 @@
 Summary:	hypersrc is a GUI program for browsing source code
-Summary(pl.UTF-8):   Program GUI do przeglądania kodu źródłowego
+Summary(pl.UTF-8):	Program GUI do przeglądania kodu źródłowego
 Name:		hypersrc
 Version:	5.4.20
 Release:	0.1
